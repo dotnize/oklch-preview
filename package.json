@@ -1,7 +1,7 @@
 {
   "name": "oklch-preview",
   "publisher": "nize",
-  "displayName": "OKLCH Preview",
+  "displayName": "OKLCH Color Preview",
   "description": "Preview OKLCH colors for CSS files.",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/dotnize/oklch-preview#readme",
   "author": "Nathaniel Tampus <nate@mugnavo.com>",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.97.0"
   },

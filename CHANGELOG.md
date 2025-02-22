@@ -2,8 +2,10 @@
 
 All notable changes to the "oklch-preview" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.2] - 2025-02-22
 
-## [Unreleased]
+- Updated extension display name to OKLCH Color Preview
+
+## [0.0.1] - 2025-02-22
 
 - Initial release
