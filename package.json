@@ -1,7 +1,15 @@
 {
   "name": "oklch-preview",
-  "displayName": "oklch-preview",
-  "description": "Preview OKLCH colors for CSS.",
+  "publisher": "nize",
+  "displayName": "OKLCH Preview",
+  "description": "Preview OKLCH colors for CSS files.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotnize/oklch-preview.git"
+  },
+  "homepage": "https://github.com/dotnize/oklch-preview#readme",
+  "author": "Nathaniel Tampus <nate@mugnavo.com>",
+  "license": "MIT",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.97.0"
@@ -9,16 +17,10 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "oklch-preview.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
