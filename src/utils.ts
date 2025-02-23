@@ -1,11 +1,19 @@
 import * as vscode from "vscode";
 
+export function normalizePercentage(value: string): string {
+    if (value.endsWith('%')) {
+        return (parseFloat(value) / 100).toString();
+    }
+    return value;
+}
+
 export function createOklchDecoration(l: string, c: string, h: string): vscode.TextEditorDecorationType {
-    const oklchColor = `oklch(${l} ${c} ${h})`;
+    const normalizedL = normalizePercentage(l);
+    const oklchColor = `oklch(${normalizedL} ${c} ${h})`;
     return vscode.window.createTextEditorDecorationType({
         backgroundColor: oklchColor,
         borderRadius: "2px",
-        color: Number(l) > 0.5 ? "#000000" : "#ffffff",
+        color: Number(normalizedL) > 0.5 ? "#000000" : "#ffffff",
     });
 }
 
