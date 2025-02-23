@@ -1,6 +1,6 @@
-# Change Log
+## [0.1.0] - 2025-02-23
 
-All notable changes to the "oklch-preview" extension will be documented in this file.
+- Added support for lightness percentage values ([#1](https://github.com/dotnize/oklch-preview/issues/1))
 
 ## [0.0.2] - 2025-02-22
 

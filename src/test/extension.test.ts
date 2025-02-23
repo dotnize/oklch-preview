@@ -1,7 +1,7 @@
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import { createDecoratorManager } from '../decorator';
-import { calculateRange, createOklchDecoration } from '../utils';
+import { calculateRange, createOklchDecoration, normalizePercentage } from '../utils';
 
 suite('OKLCH Preview Extension', () => {
 	const waitForDecoration = () => new Promise(resolve => setTimeout(resolve, 500));
@@ -51,5 +51,27 @@ suite('OKLCH Preview Extension', () => {
 		// Clean up
 		decoratorManager.clearDecorations();
 		await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+	});
+
+	test('Decorator - should handle percentage lightness values', async () => {
+		const document = await vscode.workspace.openTextDocument({
+			content: 'color: oklch(85% 0.2 30);',
+			language: 'css'
+		});
+		const editor = await vscode.window.showTextDocument(document);
+		const decoratorManager = createDecoratorManager();
+
+		decoratorManager.updateDecorations(editor);
+		await waitForDecoration();
+
+		// Clean up
+		decoratorManager.clearDecorations();
+		await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+	});
+
+	test('Utils - normalizePercentage converts percentage to decimal', () => {
+		assert.strictEqual(normalizePercentage('85%'), '0.85');
+		assert.strictEqual(normalizePercentage('0.85'), '0.85');
+		assert.strictEqual(normalizePercentage('100%'), '1');
 	});
 });
