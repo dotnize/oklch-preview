@@ -10,7 +10,7 @@
   "homepage": "https://github.com/dotnize/oklch-preview#readme",
   "author": "Nathaniel Tampus <nate@mugnavo.com>",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.97.0"
   },
