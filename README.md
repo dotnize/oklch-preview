@@ -3,8 +3,8 @@
 </h1>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=nize.oklch-preview"><img src="https://img.shields.io/visual-studio-marketplace/v/nize.oklch-preview" alt="version" /></a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=nize.oklch-preview"><img src="https://img.shields.io/visual-studio-marketplace/i/nize.oklch-preview" alt="installs" /></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=nize.oklch-preview"><img src="https://vsmarketplacebadges.dev/version-short/nize.oklch-preview.svg" alt="version" /></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=nize.oklch-preview"><img src="https://vsmarketplacebadges.dev/downloads-short/nize.oklch-preview.svg" alt="downloads" /></a>
 </p>
 
 <p align="center">
