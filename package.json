@@ -5,12 +5,13 @@
   "description": "Preview OKLCH colors for CSS files.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotnize/oklch-preview.git"
+    "url": "https://github.com/dotnize/oklch-preview"
   },
   "homepage": "https://github.com/dotnize/oklch-preview#readme",
+  "icon": "./assets/icon.png",
   "author": "Nathaniel Tampus <nate@mugnavo.com>",
   "license": "MIT",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "engines": {
     "vscode": "^1.96.0"
   },
