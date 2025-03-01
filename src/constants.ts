@@ -1,4 +1,4 @@
-export const SUPPORTED_LANGUAGES = ["css", "scss", "less", "postcss", "tailwindcss"];
+export const SUPPORTED_LANGUAGES = ["css", "scss", "sass", "less", "postcss", "tailwindcss"];
 
 export const OKLCH_REGEX = /(?:oklch\(|(--[\w-]+:\s*))?([\d.]+%?)\s+([\d.]+)\s+([\d.]+)/g;
 

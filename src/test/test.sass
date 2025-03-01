@@ -1,0 +1,37 @@
+// Variables
+$primary: oklch(65% 0.2 230)
+$accent: oklch(85% 0.17 88)
+$warning: oklch(75% 0.25 45)
+
+// Nested structure
+.container
+  background: oklch(98% 0.005 250)
+
+  .header
+    color: $primary
+    border-bottom: 1px solid oklch(50% 0.1 230)
+
+    &:hover
+      background: oklch(95% 0.1 230)
+
+  .content
+    background: oklch(100% 0 0)
+
+    .card
+      background: oklch(97% 0.02 88)
+      border: 1px solid $accent
+
+      &--warning
+        background: $warning
+        color: oklch(95% 0.02 45)
+
+// Mixins with OKLCH
+@mixin gradient-bg
+  background: linear-gradient(
+    to right,
+    oklch(75% 0.15 230),
+    oklch(75% 0.15 260)
+  )
+
+.gradient-element
+  @include gradient-bg

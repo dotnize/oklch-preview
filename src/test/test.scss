@@ -1,0 +1,60 @@
+// Theme colors with OKLCH
+$primary: oklch(65% 0.2 230);
+$accent: oklch(85% 0.17 88);
+$warning: oklch(75% 0.25 45);
+$surface: oklch(98% 0.005 250);
+
+// Color palette
+$colors: (
+  'slate': (
+    50: oklch(97% 0.003 257),
+    100: oklch(95% 0.006 257),
+    200: oklch(89% 0.012 257),
+    300: oklch(83% 0.018 257),
+    400: oklch(74% 0.024 257),
+    500: oklch(65% 0.030 257),
+    600: oklch(54% 0.036 257),
+    700: oklch(43% 0.042 257),
+    800: oklch(32% 0.048 257),
+    900: oklch(21% 0.054 257)
+  )
+);
+
+.container {
+  background-color: $surface;
+  
+  .header {
+    color: $primary;
+    border-bottom: 1px solid oklch(50% 0.1 230);
+    
+    &:hover {
+      background-color: oklch(95% 0.1 230);
+    }
+  }
+  
+  .content {
+    background-color: oklch(100% 0 0);
+    
+    .card {
+      background-color: oklch(97% 0.02 88);
+      border: 1px solid $accent;
+      
+      &--warning {
+        background-color: $warning;
+        color: oklch(95% 0.02 45);
+      }
+    }
+  }
+}
+
+@mixin gradient-background {
+  background: linear-gradient(
+    to right,
+    oklch(75% 0.15 230),
+    oklch(75% 0.15 260)
+  );
+}
+
+.gradient-element {
+  @include gradient-background;
+}
