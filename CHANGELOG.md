@@ -1,6 +1,6 @@
 ## [0.3.0] - 2025-03-09
 
-- Added support for configuring additional file patterns, such as CSS-in-JS files:
+- Added support for configuring additional file patterns, such as CSS-in-JS files ([#6](https://github.com/dotnize/oklch-preview/pull/6))
 
   ```json
   "oklchPreview.additionalFilePatterns": [
