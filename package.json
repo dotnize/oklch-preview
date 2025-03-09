@@ -11,7 +11,7 @@
   "icon": "./assets/icon.png",
   "author": "Nathaniel Tampus <nate@mugnavo.com>",
   "license": "MIT",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -21,6 +21,21 @@
   "activationEvents": [
     "onStartupFinished"
   ],
+  "contributes": {
+    "configuration": {
+      "title": "OKLCH Color Preview",
+      "properties": {
+        "oklchPreview.additionalFilePatterns": {
+          "type": "array",
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "description": "Additional file patterns to apply OKLCH preview to (e.g., *.css.ts)"
+        }
+      }
+    }
+  },
   "main": "./dist/extension.js",
   "scripts": {
     "vscode:prepublish": "pnpm run package",

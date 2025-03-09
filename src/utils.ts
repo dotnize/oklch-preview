@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { SUPPORTED_LANGUAGES } from './constants';
 
 export function normalizePercentage(value: string): string {
     if (value.endsWith('%')) {
@@ -28,4 +29,33 @@ export function calculateRange(
     const startPos = new vscode.Position(lineIndex, valueStartIndex);
     const endPos = new vscode.Position(lineIndex, valueStartIndex + `${l} ${c} ${h}`.length);
     return new vscode.Range(startPos, endPos);
+}
+
+export function getAdditionalFilePatterns(): string[] {
+    return vscode.workspace.getConfiguration('oklchPreview').get('additionalFilePatterns', []);
+}
+
+export function isFileSupported(document: vscode.TextDocument): boolean {
+    // Check if the language ID is in the supported languages
+    if (SUPPORTED_LANGUAGES.includes(document.languageId)) {
+        return true;
+    }
+
+    // Check if the file matches any of the additional patterns
+    const additionalPatterns = getAdditionalFilePatterns();
+    if (additionalPatterns.length > 0) {
+        const filePath = document.fileName;
+        return additionalPatterns.some(pattern => {
+            // Convert glob pattern to regex pattern
+            const regexPattern = new RegExp(
+                pattern
+                    .replace(/\./g, '\\.')
+                    .replace(/\*/g, '.*')
+                    .replace(/\?/g, '.')
+            );
+            return regexPattern.test(filePath);
+        });
+    }
+
+    return false;
 }
