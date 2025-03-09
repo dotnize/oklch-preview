@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import { OKLCH_REGEX, SUPPORTED_LANGUAGES } from "./constants";
-import { createOklchDecoration, calculateRange } from "./utils";
+import { createOklchDecoration, calculateRange, isFileSupported } from "./utils";
 
 export function createDecoratorManager() {
     let decorationTypes: vscode.TextEditorDecorationType[] = [];
@@ -11,7 +11,7 @@ export function createDecoratorManager() {
     }
 
     function updateDecorations(editor: vscode.TextEditor | undefined) {
-        if (!editor || !SUPPORTED_LANGUAGES.includes(editor.document.languageId)) {
+        if (!editor || !isFileSupported(editor.document)) {
             return;
         }
 

@@ -15,6 +15,20 @@
 <img src="https://github.com/user-attachments/assets/d619d658-ddb1-4116-8bf1-c00876cbe873" alt="Preview" />
 </p>
 
+## Custom File Patterns
+
+By default, OKLCH Preview works with standard CSS files (css, scss, sass, less, postcss).
+
+You can configure the extension to support additional file patterns, such as CSS-in-JS files:
+
+```json
+"oklchPreview.additionalFilePatterns": [
+  "**/*.css.ts",
+  "**/*.styles.ts",
+  "**/*.styled.tsx"
+]
+```
+
 ## Acknowledgements:
 
 - [HSL Preview](https://github.com/13ruceYu/hsl-preview) by 13ruceYu, which inspired this extension.
