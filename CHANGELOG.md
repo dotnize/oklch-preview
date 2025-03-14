@@ -1,3 +1,7 @@
+## [0.3.1] - 2025-03-14
+
+- Added support for hue values in degrees and opacity values ([#8](https://github.com/dotnize/oklch-preview/pull/8))
+
 ## [0.3.0] - 2025-03-09
 
 - Added support for configuring additional file patterns, such as CSS-in-JS files ([#6](https://github.com/dotnize/oklch-preview/pull/6))
