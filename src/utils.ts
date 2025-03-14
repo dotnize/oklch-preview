@@ -8,9 +8,19 @@ export function normalizePercentage(value: string): string {
     return value;
 }
 
-export function createOklchDecoration(l: string, c: string, h: string): vscode.TextEditorDecorationType {
+export function createOklchDecoration(l: string, c: string, h: string, opacity?: string): vscode.TextEditorDecorationType {
     const normalizedL = normalizePercentage(l);
-    const oklchColor = `oklch(${normalizedL} ${c} ${h})`;
+    const normalizedC = normalizePercentage(c);
+    let oklchColor = `oklch(${normalizedL} ${normalizedC} ${h}`;
+
+    // Add opacity if provided
+    if (opacity) {
+        const normalizedOpacity = normalizePercentage(opacity);
+        oklchColor += ` / ${normalizedOpacity})`;
+    } else {
+        oklchColor += ')';
+    }
+
     return vscode.window.createTextEditorDecorationType({
         backgroundColor: oklchColor,
         borderRadius: "2px",
@@ -23,11 +33,24 @@ export function calculateRange(
     match: RegExpMatchArray,
     l: string,
     c: string,
-    h: string
+    h: string,
+    opacity?: string
 ): vscode.Range {
-    const valueStartIndex = match.index! + (match[0].length - `${l} ${c} ${h}`.length);
+    let valueContent = `${l} ${c} ${h}`;
+
+    // Add 'deg' if it was in the original match
+    if (match[0].includes('deg')) {
+        valueContent += 'deg';
+    }
+
+    // Add opacity if present
+    if (opacity) {
+        valueContent += ` / ${opacity}`;
+    }
+
+    const valueStartIndex = match.index! + (match[0].length - valueContent.length);
     const startPos = new vscode.Position(lineIndex, valueStartIndex);
-    const endPos = new vscode.Position(lineIndex, valueStartIndex + `${l} ${c} ${h}`.length);
+    const endPos = new vscode.Position(lineIndex, valueStartIndex + valueContent.length);
     return new vscode.Range(startPos, endPos);
 }
 

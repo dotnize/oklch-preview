@@ -7,7 +7,7 @@
     --color-emerald-500: oklch(0.696 0.17 162.48);
     --color-emerald-600: oklch(0.596 0.145 163.225);
     --color-emerald-700: oklch(50.8% 0.118 165.612);
-    --color-emerald-800: oklch(0.432 0.095 166.913);
+    --color-emerald-800: oklch(0.432 9.5% 166.913);
     --color-emerald-900: oklch(0.378 0.077 168.94);
     --color-emerald-950: oklch(0.262 0.051 172.552);
     --destructive: oklch(0.396 0.141 25.723);
@@ -21,4 +21,7 @@
     --chart-5: oklch(0.645 0.246 16.439);
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
+    --test-var: 0.432 0.095 166.913;
+    --test-var-2: oklch(43.2% 0.095 2deg / 0.5);
+    --test-var-3: oklch(0.432 0.095 166deg / 0.5);
 }
