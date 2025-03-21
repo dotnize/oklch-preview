@@ -24,4 +24,30 @@
     --test-var: 0.432 0.095 166.913;
     --test-var-2: oklch(43.2% 0.095 2deg / 0.5);
     --test-var-3: oklch(0.432 0.095 166deg / 0.5);
+
+    --ms-color-white: oklch(100% 0 0deg);
+    --ms-color-white-a60: oklch(100% 0 0deg / 60%);
+    --ms-color-white-a20: oklch(100% 0 0deg / 20%);
+    --ms-color-black: oklch(0% 0 0deg);
+    --ms-color-black-a60: oklch(0% 0 0deg / 60%);
+    --ms-color-black-a85: oklch(0% 0 0deg / 85%);
+    --ms-color-black-a50: oklch(0% 0 0deg / 50%);
+    --ms-color-black-a25: oklch(0% 0 0deg / 25%);
+    --ms-color-black-a10: oklch(0% 0 0deg / 10%);
+    --ms-color-black-a5: oklch(0% 0 0deg / 5%);
+    --ms-color-black-a3: oklch(0% 0 0deg / 3%);
+    --ms-color-black-a1: oklch(0% 0 0deg / 1%);
+    --ms-color-gray-100: oklch(95% 0 0deg);
+    --ms-color-gray-150: oklch(90% 0 0deg);
+    --ms-color-gray-1: oklch(67.64% 0 0deg);
+    --ms-color-gray-2: oklch(98.21% 0 0deg);
+    --ms-color-gray-2-a75: oklch(98.21% 0 0deg / 75%);
+    --ms-color-gray-3: oklch(50% 0 0deg);
+
+
+    /* test hsl(), should not match */
+    --test-hsl: hsl(0 0% 0%);
+    --test-hsl-2: hsl(0 0% 0% / 0.5);
+    --test-hsl-3: hsl(0 0% 0% / 50%);
+    --test-hsl-4: hsl(0 0% 0% / 50%);
 }

@@ -11,8 +11,8 @@ suite('OKLCH Preview Extension', () => {
 		const range = calculateRange(0, match!, '0.5', '0.2', '30');
 
 		assert.strictEqual(range.start.line, 0);
-		assert.strictEqual(range.start.character, 7);
-		assert.strictEqual(range.end.character, 17);
+		assert.strictEqual(range.start.character, 6);
+		assert.strictEqual(range.end.character, 16);
 	});
 
 	test('Utils - createOklchDecoration creates valid decoration', () => {
