@@ -36,21 +36,15 @@ export function calculateRange(
     h: string,
     opacity?: string
 ): vscode.Range {
-    let valueContent = `${l} ${c} ${h}`;
+    const valueContent = `${l} ${c} ${h}${opacity ? ` / ${opacity}` : ""}`;
 
-    // Add 'deg' if it was in the original match
-    if (match[0].includes('deg')) {
-        valueContent += 'deg';
-    }
-
-    // Add opacity if present
-    if (opacity) {
-        valueContent += ` / ${opacity}`;
-    }
-
-    const valueStartIndex = match.index! + (match[0].length - valueContent.length);
+    // Calculate start position - add 6 to account for "oklch("
+    const valueStartIndex = match.index! + 6;
     const startPos = new vscode.Position(lineIndex, valueStartIndex);
-    const endPos = new vscode.Position(lineIndex, valueStartIndex + valueContent.length);
+    const endPos = new vscode.Position(
+        lineIndex,
+        valueStartIndex + valueContent.length
+    );
     return new vscode.Range(startPos, endPos);
 }
 

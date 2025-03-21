@@ -23,7 +23,7 @@ export function createDecoratorManager() {
             const matches = line.text.matchAll(OKLCH_REGEX);
 
             for (const match of matches) {
-                const [, , l, c, h, opacity] = match;
+                const [, l, c, h, opacity] = match;
                 const range = calculateRange(i, match, l, c, h, opacity);
                 const decorationType = createOklchDecoration(l, c, h, opacity);
 
