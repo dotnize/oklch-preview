@@ -1,3 +1,8 @@
+## [0.4.0] - 2025-03-21
+
+- Only show previews for colors wrapped in `oklch()`
+- Fixed text color visibility issues for low opacity values
+
 ## [0.3.1] - 2025-03-14
 
 - Added support for hue values in degrees and opacity values ([#8](https://github.com/dotnize/oklch-preview/pull/8))
